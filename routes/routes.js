@@ -1,10 +1,12 @@
 import express from 'express'
+import { ValidatorCustomer } from '../services/index.js';
 
 export const router = express.Router();
 
 
 router.post("/customer-loans", (req, res)=>{
 
+    
     const customerInfo = {
         age: req.body.age,
         cpf: req.body.cpf,
@@ -13,8 +15,8 @@ router.post("/customer-loans", (req, res)=>{
         location: req.body.location
     }
 
-    
+    const loans = ValidatorCustomer(customerInfo)
 
 
-    return res.status(200).json(customer)
+    return res.status(200).json(loans)
 })
