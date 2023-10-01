@@ -3,9 +3,6 @@
 export const ValidatorCustomer = (customerInfo) => {
 
     const loans = [];
-
-    
-
     if(customerInfo.income <= 3000){
         loans.push(
         {
@@ -41,8 +38,6 @@ export const ValidatorCustomer = (customerInfo) => {
             }
         )
     }
-
-    
 
     return loans;
 
